@@ -85,6 +85,17 @@ function game() {
                 break;
         }
     }
+
+    console.log(`Player: ${playerScore}, Computer: ${computerScore}.`);
+    if (playerScore > computerScore) {
+        console.log('Congratulations! You Win!');
+    }
+    else if (playerScore < computerScore) {
+        console.log('You Lose! Better luck next time!');
+    }
+    else if (playerScore === computerScore) {
+        console.log('You tied!');
+    }
 }
 
 game();
