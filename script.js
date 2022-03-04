@@ -43,3 +43,12 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let choice = prompt("Choose Rock, Paper, or Scissors.");
+        let roundResult = playRound(choice, computerPlay());
+    }
+}
+
+game();
