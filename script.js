@@ -45,9 +45,45 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+
     for (let i = 0; i < 5; i++) {
         let choice = prompt("Choose Rock, Paper, or Scissors.");
         let roundResult = playRound(choice, computerPlay());
+
+        switch (roundResult) {
+            case 0:
+                console.log('It\'s a tie!');
+                break;
+            case 1:
+                console.log('You Lose! Paper beats Rock!');
+                computerScore++;
+                break;
+            case 2:
+                console.log('You Win! Rock beats Scissors!');
+                playerScore++;
+                break;
+            case 3:
+                console.log('You Lose! Scissors beats Paper!');
+                computerScore++;
+                break;
+            case 4:
+                console.log('You Win! Paper beats Rock!');
+                playerScore++;
+                break;
+            case 5:
+                console.log('You Lose! Rock beats Scissors!');
+                computerScore++;
+                break;
+            case 6:
+                console.log('You Win! Scissors beats Paper!');
+                playerScore++;
+                break;
+            default:
+                console.log('Something went wrong!');
+                break;
+        }
     }
 }
 
