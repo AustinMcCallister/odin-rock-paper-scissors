@@ -53,8 +53,8 @@ function game() {
     let computerScore = 0;
 
     for (let i = 0; i < 5; i++) {
-        let choice = prompt("Choose Rock, Paper, or Scissors.");
-        let roundResult = playRound(choice, computerPlay());
+        let playerChoice = prompt("Choose Rock, Paper, or Scissors.");
+        let roundResult = playRound(playerChoice, computerPlay());
 
         switch (roundResult) {
             case 0:
