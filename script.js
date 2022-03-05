@@ -48,57 +48,48 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-
-  for (let i = 0; i < 5; i++) {
-    let roundResult = playRound(prompt('Choose Rock, Paper, or Scissors.'), computerPlay());
-
-    switch (roundResult) {
-      case 0:
-        console.log('It\'s a tie!');
-        break;
-      case 1:
-        console.log('You Lose! Paper beats Rock!');
-        computerScore++;
-        break;
-      case 2:
-        console.log('You Win! Rock beats Scissors!');
-        playerScore++;
-        break;
-      case 3:
-        console.log('You Lose! Scissors beats Paper!');
-        computerScore++;
-        break;
-      case 4:
-        console.log('You Win! Paper beats Rock!');
-        playerScore++;
-        break;
-      case 5:
-        console.log('You Lose! Rock beats Scissors!');
-        computerScore++;
-        break;
-      case 6:
-        console.log('You Win! Scissors beats Paper!');
-        playerScore++;
-        break;
-      default:
-        console.log('Something went wrong!');
-        break;
-    }
+function calculateScore(roundResult) {
+  switch (roundResult) {
+    case 0:
+      console.log('It\'s a tie!');
+      gameResult.textContent = 'It\'s a tie!';
+      break;
+    case 1:
+      console.log('You Lose! Paper beats Rock!');
+      gameResult.textContent = 'You Lose! Paper beats Rock!';
+      computerScore++;
+      break;
+    case 2:
+      console.log('You Win! Rock beats Scissors!');
+      gameResult.textContent = 'You Win! Rock beats Scissors!';
+      playerScore++;
+      break;
+    case 3:
+      console.log('You Lose! Scissors beats Paper!');
+      gameResult.textContent = 'You Lose! Scissors beats Paper!';
+      computerScore++;
+      break;
+    case 4:
+      console.log('You Win! Paper beats Rock!');
+      gameResult.textContent = 'You Win! Paper beats Rock!';
+      playerScore++;
+      break;
+    case 5:
+      console.log('You Lose! Rock beats Scissors!');
+      gameResult.textContent = 'You Lose! Rock beats Scissors!';
+      computerScore++;
+      break;
+    case 6:
+      console.log('You Win! Scissors beats Paper!');
+      gameResult.textContent = 'You Win! Scissors beats Paper!';
+      playerScore++;
+      break;
+    default:
+      console.log('Something went wrong!');
+      break;
   }
 
+  playerTotal.textContent = `${playerScore}`;
+  computerTotal.textContent = `${computerScore}`;
   console.log(`Player: ${playerScore}, Computer: ${computerScore}.`);
-  if (playerScore > computerScore) {
-    console.log('Congratulations! You Win!');
-  }
-  else if (playerScore < computerScore) {
-    console.log('You Lose! Better luck next time!');
-  }
-  else if (playerScore === computerScore) {
-    console.log('You tied!');
-  }
 }
-
-game();
