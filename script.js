@@ -1,6 +1,19 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', function increaseScore() {
+    if (playerScore < 5 && computerScore < 5) {
+      calculateScore(playRound(button.id, computerPlay()));
+    }
+    if (playerScore === 5 || computerScore === 5) {
+      endGame(playerScore, computerScore);
+      button.removeEventListener('click', increaseScore);
+    }
+  });
+});
+
 function computerPlay() {
   let choice = (Math.floor(Math.random() * 3));
   if (choice == 0) {
