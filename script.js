@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
   let choice = (Math.floor(Math.random() * 3));
   if (choice == 0) {
