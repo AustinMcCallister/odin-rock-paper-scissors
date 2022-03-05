@@ -40,34 +40,30 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  // Convert parameters to lowercase to facilitate case-insensitive input
-  playerSelection = playerSelection.toLowerCase();
-  computerSelection = computerSelection.toLowerCase();
-
   if (playerSelection === computerSelection) {
     return 0;
   }
-  else if (playerSelection === 'rock') {
-    if (computerSelection === 'paper') {
+  else if (playerSelection === 'Rock') {
+    if (computerSelection === 'Paper') {
       return 1;
     }
-    else if (computerSelection === 'scissors') {
+    else if (computerSelection === 'Scissors') {
       return 2;
     }
   }
-  else if (playerSelection === 'paper') {
-    if (computerSelection === 'scissors') {
+  else if (playerSelection === 'Paper') {
+    if (computerSelection === 'Scissors') {
       return 3;
     }
-    else if (computerSelection === 'rock') {
+    else if (computerSelection === 'Rock') {
       return 4;
     }
   }
-  else if (playerSelection === 'scissors') {
-    if (computerSelection === 'rock') {
+  else if (playerSelection === 'Scissors') {
+    if (computerSelection === 'Rock') {
       return 5;
     }
-    else if (computerSelection === 'paper') {
+    else if (computerSelection === 'Paper') {
       return 6;
     }
   }
