@@ -24,14 +24,17 @@ function computerPlay() {
   let choice = (Math.floor(Math.random() * 3));
   if (choice == 0) {
     console.log('Opponent chose Rock.');
+    opponentChoice.textContent = 'Opponent chose Rock.';
     return 'Rock';
   }
   else if (choice == 1) {
     console.log('Opponent chose Paper.');
+    opponentChoice.textContent = 'Opponent chose Paper';
     return 'Paper';
   }
   else if (choice == 2) {
     console.log('Opponent chose Scissors.');
+    opponentChoice.textContent = 'Opponent chose Scissors.';
     return 'Scissors';
   }
 }
