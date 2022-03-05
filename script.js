@@ -14,6 +14,12 @@ buttons.forEach((button) => {
   });
 });
 
+const playerTotal = document.querySelector('.player-score');
+const computerTotal = document.querySelector('.computer-score');
+
+const opponentChoice = document.querySelector('#opponent-choice');
+const gameResult = document.querySelector('#game-result');
+
 function computerPlay() {
   let choice = (Math.floor(Math.random() * 3));
   if (choice == 0) {
