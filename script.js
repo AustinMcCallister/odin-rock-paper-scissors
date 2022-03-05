@@ -96,3 +96,18 @@ function calculateScore(roundResult) {
   computerTotal.textContent = `${computerScore}`;
   console.log(`Player: ${playerScore}, Computer: ${computerScore}.`);
 }
+
+function endGame(playerScore, computerScore) {
+  if (playerScore > computerScore) {
+    console.log('Congratulations! You Win!');
+    gameResult.textContent = 'Congratulations! You Win!';
+  }
+  else if (playerScore < computerScore) {
+    console.log('You Lose! Better luck next time!');
+    gameResult.textContent = 'You Lose! Better luck next time!';
+  }
+  else if (playerScore === computerScore) {
+    console.log('You tied!');
+    gameResult.textContent = 'You tied!';
+  }
+}
